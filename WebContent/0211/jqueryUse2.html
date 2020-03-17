@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jqueryUse</title>
+</head>
+<body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery-jqplot/jquery.jqplot.js"></script>
+	<script type="text/javascript" src="../jquery-jqplot/plugins/jqplot.dateAxisRenderer.js"></script>
+	<script type="text/javascript" src="../jquery-jqplot/plugins/jqplot.logAxisRenderer.js"></script>
+	<script type="text/javascript" src="../jquery-jqplot/plugins/jqplot.canvasTextRenderer.js"></script>
+	<script type="text/javascript" src="../jquery-jqplot/plugins/jqplot.canvasAxisTickRenderer.js"></script>
+	<script type="text/javascript" src="../jquery-jqplot/plugins/jqplot.ohlcRenderer.js"></script>
+	<script type="text/javascript" src="../jquery-jqplot/plugins/jqplot.cursor.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../jquery-jqplot/jquery.jqplot.css" />
+
+	<script>
+		$(document).ready(function() {
+			plot1 = $.jqplot('chart1', [ yahoo ], {
+				series : [ {
+					renderer : $.jqplot.OHLCRenderer,
+					rendererOptions : {
+						candleStick : true
+					}
+				} ],
+				axes : {
+					xaxis : {
+						renderer : $.jqplot.DateAxisRenderer,
+						rendererOptions : {
+							tickInset : 0
+						},
+						tickRenderer : $.jqplot.CanvasAxisTickRenderer,
+						tickOptions : {
+							angle : -30
+						}
+					},
+					yaxis : {
+						renderer : $.jqplot.LogAxisRenderer,
+						tickOptions : {
+							prefix : '$'
+						}
+					}
+				},
+				cursor : {
+					show : true,
+					zoom : true
+				}
+			});
+		});
+	</script>
+</body>
+</html>

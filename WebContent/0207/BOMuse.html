@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BOM</title>
+
+</head>
+<body>
+	<img src="./images/fruit3.jpg" width="100" height="100" id="img" />
+	<div id="disp"></div>
+	<script>
+		var img = document.getElementById("img");  
+		var imagename = [ "fruit1.jpg", "fruit2.jpg", "fruit3.jpg", "fruit4.jpg", "fruit5.jpg" ];
+		
+		var text = ["C", "Java", "Python", "JavaScript"];
+		var disp = document.getElementById("disp");
+		
+		var i = 0;
+		var timer = setInterval(function() {
+			i = i + 1;
+			img.src = "./images/" + imagename[i % imagename.length];  
+			disp.innerHTML = text[i % text.length];
+		}, 1000); 
+		//
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>navigator</title>
+<script>
+	var userAgent = navigator.userAgent;
+	alert(userAgent)
+	//
+	//모바일 운영체제 이름 배열을 생성
+	//apple 제품은 iphone 과 ipad 가 구분됨
+	//Android 제품은 스마트 폰과 태블릿이 구분이 안됨
+	//모바일페이지를 만들 때 android를 고려하는 경우에는 pc 버전이라는 버튼을 추가합니다. 
+	//
+	var mobile = [ "iphone", "ipad", "android" ];
+	//
+	//
+	//userAgent에 mobile에 있는 텍스트가 있는지 확인 
+	var result = false;
+	for(var idx in mobile){
+		if(userAgent.toLowerCase().indexOf(mobile[idx]) >=0 ){
+			result = true;
+			break;
+		}
+	}
+	//
+	if(result == true) {
+		//location.href="모바일페이지 URL" ; 
+		alert("스마트폰에서 접속");
+	}else{
+		alert("PC에서 접속");
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+.korea {
+	color: #000000;
+	width: 200px;
+	line-height: 30px;
+	text-align: center;
+	padding: 30px; /* 경계선과 콘텐츠와의 여백 */
+	border: 1px solid rgb(18, 52, 88);
+	/* 여러 속성의 값을 한번에 적용할 때 공백으로 구분 */
+	/* ,는 동일한 속성의 값을 여러 개 적용할 때 구분 */
+	background: #eeeeee;
+	/* 여러개의 값을 지정할 수 있는 속성이ㅡ 경우 뒤에서 부터 값 생략이 가능하다. */
+	/* css나 javascript는 옵션에 전부 기본값이 설정되어 있다 */
+	border-radius: 15px;
+	box-shadow: inset 0px 0px 20px 15px rgba(18, 52, 88, 0.4);
+}
+
+.korea p {
+	vertical-align: middle;
+}
+/* menu 클래스를 가진 객체들을 왼쪽에서부터 배치하고 오른쪽에 다른 콘텐츠를 배치할 수 있도록 설정 */
+.menu {
+	float: left;
+	margin: 10px;
+}
+/* title 클래스를 가진 객체는 이전에 적용된 float을 해제하고 원래대로 배치 */
+.title {
+	clear: both;
+}
+
+/* 스크롤 을 위해서 테이블 생성 */
+table{
+	border:1px solid black;
+	width:400px;
+}
+
+th, td{
+	width:200px;
+}
+
+/* div로 묶은 content클래스에 스크롤 추가함 */
+.content{
+	width:420px;
+	height:100px;
+	overflow:auto;
+}
+
+#transform{
+	width:200px;
+	height:60px;
+	text-align:center;
+	background-color:green;
+	
+	/* transform 변환은 원본의 속성을 변경하는것이 아니고 출력될때 */
+	/* 행렬과의 연산을 이용해서 보이기만 그렇게 되도록 하는 것 */
+	
+	-webkit-transform:scale(1.0);	/* 크게 만들면 겹친다 */
+	/* -webkit-transform:rotate(45deg);	/* 기울기 */
+	/* -webkit-transform:skw(10geg, 10deg); */ 
+}
+
+/* animationUse.html */
+
+#menu{
+	font:20px;
+	width:100px;
+	height:20px;
+	color:red;
+	background:#abc;
+	
+	/* 애니메이션 적용  */
+	-webkit-transition:width 2.0s;
+	-webkit-transition:color 2.0s;
+	-webkit-transition:background-color 2.0s;
+}
+
+#menu:hover{
+	width:250px;
+	color:blue;
+	background-color:papayawhip;
+	
+}
+
+/* keyany라는 이름의 욺직이는 애니메이션 제작 */
+@-webkit-keyframes keyany{
+	from{
+		left:0px;
+		top:0px;
+		-webkit-transform:rotate(0deg);
+	}
+	30%{
+		left:700px; /* duration 10s의 30%동안 700px위치로 이동하는 시간  */
+		
+	}
+	to{
+		left:700px;
+		-webkit-transform:rotate(3600deg); /* 3600 = 10바퀴회전 */
+	}
+}
+
+/* 애니메이션 적용 */
+img{
+	position:absolute;
+	-webkit-animation-name:keyany;
+	-webkit-animation-duration:10s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-direcion:alternate;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
